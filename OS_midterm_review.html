@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090d1b"><title>Millionaire Lab · CGS1700</title><meta name="description" content="Play your operating systems midterm review. 50 questions, team scores, lifelines and original sound."><style>:root{color-scheme:dark;--bg:#090d1b;--panel:#101729;--panel2:#171f35;--line:#28334b;--muted:#9ba8c0;--text:#f3f5fb;--gold:#edc87b;--green:#73e4b0;--red:#ff9b9b;--purple:#b4a1ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 65% 12%,#1b204540,transparent 60%),var(--bg);color:var(--text);min-height:100vh}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.4}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:4px}a{color:inherit}.topbar{height:100px;max-width:1560px;margin:auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px;text-decoration:none;font-size:14px;font-weight:800;letter-spacing:2px}.brand-mark{position:relative;display:grid;place-items:center;width:46px;height:46px;border:1px solid #79663f;border-radius:50%;font:25px Georgia;color:var(--gold)}.brand-mark span{position:absolute;font-size:14px;right:-3px;top:-5px;background:var(--bg)}.brand-sub{display:block;font-size:8px;letter-spacing:2.1px;margin-top:6px;color:var(--muted)}.top-tools{display:flex;gap:10px;align-items:center}.course-tag{font-size:10px;letter-spacing:1.5px;color:var(--muted);margin-right:20px}.icon-btn{border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--muted);padding:10px 12px;font-size:12px}.icon-btn:hover{border-color:var(--gold);color:var(--gold)}#app{max-width:1440px;margin:auto;padding:58px 48px;min-height:calc(100vh - 170px)}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:10px}.eyebrow:before{content:'';width:22px;height:1px;background:var(--gold)}h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(46px,5.8vw,86px);font-weight:400;line-height:1.04;letter-spacing:-2.5px;margin:24px 0}h1 em{color:var(--gold);font-weight:400}h2{font-size:28px;font-weight:600;letter-spacing:-.8px}h3{font-weight:600}p{line-height:1.7;color:var(--muted)}.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;align-items:center}.intro{max-width:520px;font-size:16px}.stats{display:flex;gap:40px;border-top:1px solid var(--line);margin-top:36px;padding-top:26px}.stats strong{font-size:24px;font-weight:500;display:block}.stats span{font-size:11px;color:var(--muted);display:block;margin-top:5px}.topic-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}.topic-list span{font-size:11px;color:var(--muted);padding:7px 10px;border:1px solid var(--line);border-radius:5px}.setup{background:linear-gradient(145deg,#171e34,#101524);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 24px 80px #0003}.setup-head{display:flex;justify-content:space-between;align-items:center}.setup-head h2{font-size:21px;margin:0}.tiny{font-size:11px;color:var(--muted)}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:25px 0}.mode{border:1px solid var(--line);color:var(--text);text-align:left;padding:16px;border-radius:10px;background:#0d1323}.mode.active{border-color:var(--gold);background:#edc87b0c}.mode .mode-icon{font-size:20px;display:block;color:var(--gold);margin-bottom:13px}.mode strong{display:block;font-size:13px;margin-bottom:6px}.mode small{font-size:11px;color:var(--muted);line-height:1.5;display:block}label{display:block;font-size:12px;color:var(--muted);margin-bottom:8px}input,select{width:100%;background:#0d1323;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:12px;font-size:13px}select{appearance:auto}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:18px 0}.team-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.team-inputs input:only-child{grid-column:1/-1}.checkline{display:flex;align-items:center;gap:8px;font-size:12px;margin:15px 0}.checkline input{width:auto;accent-color:var(--gold)}.btn{border:1px solid var(--gold);border-radius:8px;padding:14px 21px;background:var(--gold);color:#171621;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:24px;text-decoration:none}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:transparent;border-color:var(--line);color:var(--text)}.btn.danger{color:var(--red);border-color:#ff9b9b50;background:transparent}.wide{width:100%}.setup .fineprint{text-align:center;font-size:10px;margin-bottom:0}.resume{margin-bottom:20px;padding:14px 20px;border:1px solid #edc87b55;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:13px;background:#edc87b08}.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:28px}.game-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.game-top h2{margin:10px 0 0;font-size:24px}.game-top .eyebrow{font-size:10px}.round-track{height:3px;background:var(--line);border-radius:5px;margin-bottom:28px}.round-track span{display:block;background:var(--gold);height:100%;transition:width .3s}.question-card{border:1px solid var(--line);background:linear-gradient(140deg,#151d32,#101626);border-radius:14px;padding:32px;min-height:198px;display:flex;flex-direction:column;justify-content:center}.question-meta{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted);gap:16px}.value{color:var(--gold);font-size:13px;font-weight:600}.question-card h2{font-size:clamp(22px,2.3vw,32px);line-height:1.35;margin:20px 0 4px;letter-spacing:-.6px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:20px}.answer{display:flex;align-items:center;gap:15px;border:1px solid var(--line);border-radius:10px;background:#101729;color:var(--text);padding:18px;text-align:left;min-height:95px;font-size:14px;line-height:1.5;position:relative}.answer:hover:not(:disabled){background:#1d2842;border-color:#647491}.answer .letter{display:grid;place-items:center;border:1px solid #35425d;border-radius:6px;min-width:31px;height:31px;color:var(--gold);font-size:12px}.answer.selected{border-color:var(--gold);background:#edc87b16}.answer.correct{border-color:var(--green);background:#73e4b014;opacity:1}.answer.wrong{border-color:var(--red);background:#ff9b9b12;opacity:1}.answer.eliminated{opacity:.18}.answer:disabled{opacity:.6}.answer.correct:disabled,.answer.wrong:disabled{opacity:1}.actionbar{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:10px}.timer-wrap{display:flex;align-items:center;gap:14px}.timer{width:53px;height:53px;border:2px solid #47526c;border-radius:50%;display:grid;place-items:center;font-variant-numeric:tabular-nums;font-size:17px}.timer.urgent{border-color:var(--red);color:var(--red)}.keyhint{font-size:10px;color:var(--muted);line-height:1.8}.lifelines{display:flex;gap:10px;margin-top:30px;padding-top:23px;border-top:1px solid var(--line)}.lifeline{flex:1;background:transparent;border:1px solid var(--line);border-radius:9px;color:var(--text);padding:13px;font-size:12px}.lifeline span{display:block;font-size:10px;color:var(--muted);margin-top:6px}.lifeline:hover:not(:disabled){border-color:var(--purple)}.sidebar{border:1px solid var(--line);border-radius:14px;padding:22px;background:#101524}.sidebar-title{font-size:10px;color:var(--muted);letter-spacing:1.6px;margin-bottom:16px}.bank{font-family:Georgia,serif;font-size:37px;color:var(--gold);margin:0 0 5px}.ladder{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column-reverse;gap:2px}.ladder li{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#8593af;padding:6px 10px;border-radius:5px;font-variant-numeric:tabular-nums}.ladder li.current{background:var(--gold);color:#111626;font-weight:800}.ladder li.safe:not(.current){color:var(--gold)}.ladder li.done:not(.current){color:var(--green)}.team-score{padding:16px 0;border-bottom:1px solid var(--line)}.team-score.active{color:var(--gold)}.team-score strong{display:flex;justify-content:space-between;font-size:14px}.team-score small{display:block;color:var(--muted);font-size:11px;margin-top:9px}.feedback{margin-top:20px;border-left:3px solid var(--green);background:#73e4b009;padding:17px 20px;border-radius:0 7px 7px 0}.feedback.bad{border-color:var(--red);background:#ff9b9b08}.feedback strong{font-size:15px;color:var(--green)}.feedback.bad strong{color:var(--red)}.feedback p{font-size:13px;margin:8px 0 0;color:#c6d0e4}.footer{max-width:1464px;margin:auto;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;padding:24px 36px;font-size:9px;letter-spacing:1px;color:#8190ae}.footer span:nth-child(2){letter-spacing:0}.control-row{display:flex;gap:10px}.results-head{text-align:center;max-width:730px;margin:0 auto 35px}.results-head .eyebrow{justify-content:center}.results-head h1{font-size:64px}.result-grid{max-width:900px;margin:auto}.result-grid .stats{justify-content:center;margin-bottom:30px}.scoretable{width:100%;border-collapse:collapse;font-size:14px}.scoretable td,.scoretable th{padding:16px;border-bottom:1px solid var(--line);text-align:left}.scoretable th{font-size:10px;letter-spacing:1px;color:var(--muted)}.result-actions{display:flex;justify-content:center;gap:12px;margin:28px 0}.review-list{margin:25px 0}.review-item{border-bottom:1px solid var(--line);padding:18px 0}.review-item summary{cursor:pointer;font-size:14px;line-height:1.5}.review-item p{font-size:13px}.tag{color:var(--green)}.tag.bad{color:var(--red)}dialog{background:var(--panel);color:var(--text);border:1px solid #56617d;border-radius:14px;padding:30px;max-width:560px;width:calc(100% - 32px);box-shadow:0 30px 100px #0009}dialog::backdrop{background:#030611c9;backdrop-filter:blur(6px)}dialog h2{margin-top:0}dialog p,dialog li{font-size:14px;color:var(--muted);line-height:1.7}dialog .btn{margin-top:12px}dialog .poll-row{display:grid;grid-template-columns:30px 1fr 60px;gap:15px;align-items:center;margin:15px 0}.poll-bar{height:9px;background:var(--line);border-radius:4px;overflow:hidden}.poll-bar span{height:100%;display:block;background:var(--purple)}.poll-num{padding:8px;width:68px}.friend-time{font-size:56px;color:var(--gold);font-variant-numeric:tabular-nums}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.paused{filter:blur(5px);pointer-events:none}.compact-note{font-size:11px;color:var(--muted);line-height:1.8}.settings-line{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin-top:15px}.settings-line input{width:100px}.empty{text-align:center;padding:30px}.help-items{padding-left:20px}.projector .question-card h2{font-size:36px}.projector .answer{font-size:19px;min-height:120px}.projector .keyhint{display:none}.projector #app{max-width:1600px;padding-top:28px}body:fullscreen{overflow:auto}@media(max-width:1000px){.hero{gap:35px}.topbar{padding:0 25px}.course-tag{display:none}#app{padding:40px 25px}.game-layout{grid-template-columns:minmax(0,1fr) 220px}.sidebar{padding:16px}.question-card{padding:24px}.answer{padding:14px;font-size:13px}}@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-copy{max-width:600px}h1{font-size:58px}.setup{padding:23px}.topbar{height:80px;padding:0 18px}.brand{font-size:11px;letter-spacing:1px}.brand-sub{font-size:7px;letter-spacing:1px}.brand-mark{width:36px;height:36px;font-size:20px}.icon-btn{font-size:10px;padding:8px}.top-tools{gap:5px}#app{padding:30px 18px}.game-layout{grid-template-columns:1fr}.sidebar{order:2}.ladder{display:grid;grid-template-columns:repeat(3,1fr)}.answers{gap:10px}.answer{min-height:110px;gap:10px}.lifelines{gap:6px}.lifeline{padding:12px 6px;font-size:11px}.footer{padding:22px 18px}.footer span:last-child{display:none}.actionbar{flex-wrap:wrap}.question-card h2{font-size:25px}.stats{gap:30px}.keyhint{display:none}.results-head h1{font-size:46px}.scoretable td,.scoretable th{padding:12px 8px}.result-actions{flex-wrap:wrap}}@media(max-width:420px){.answers{grid-template-columns:1fr}.answer{min-height:75px}.brand-sub{display:none}.top-tools #fullscreen{display:none}.mode{padding:12px}.setup{padding:19px}.form-row{gap:10px}.stats{gap:22px}.question-meta{font-size:10px}.control-row{width:100%}.control-row .btn{flex:1}.projector .question-card h2{font-size:27px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}@media print{.topbar,.footer,.result-actions,.review-list button{display:none}body{background:white;color:black}#app{padding:0}.scoretable th,p{color:#333}.review-item p{color:black}details{break-inside:avoid}}
+
+.flash-mode{grid-column:1/-1}.flash-mode strong{color:var(--gold)}.flash-shell{max-width:1180px;margin:auto}.flash-toolbar{display:flex;align-items:end;gap:24px;margin:28px 0 32px}.flash-toolbar>div{min-width:260px;flex:1}.flash-toolbar .checkline{white-space:nowrap;margin-bottom:14px}.flash-toolbar .btn{height:45px}.flash-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px}.flash-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;gap:12px;letter-spacing:.5px;margin:0 2px 15px}.flash-card{width:100%;min-height:370px;border:1px solid #5a527e;border-radius:17px;background:radial-gradient(ellipse at top right,#45356a30,transparent 65%),linear-gradient(140deg,#192139,#111729);color:var(--text);padding:34px;display:flex;flex-direction:column;text-align:left;box-shadow:0 20px 60px #0002;transition:background .2s,border-color .2s}.flash-card:hover{border-color:var(--purple)}.flash-card.is-revealed{border-color:#5a957b;background:radial-gradient(ellipse at top right,#2d69442a,transparent 65%),#111f25}.flash-side{font-size:10px;letter-spacing:2px;color:var(--purple);font-weight:700;margin-bottom:25px}.is-revealed .flash-side{color:var(--green)}.flash-main{font-size:clamp(23px,2.6vw,34px);font-weight:500;line-height:1.4;letter-spacing:-.6px;display:block}.flash-explanation{font-size:15px;line-height:1.8;color:#b5c8be;display:block;margin:24px 0 16px;padding-top:20px;border-top:1px solid #395449}.flash-flip-hint{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:auto;padding-top:32px;gap:15px}.flash-flip-hint span{font-size:10px;color:#8290ac}.flash-ratings{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.flash-ratings .secondary{color:var(--purple);border-color:#665780}.flash-ratings .btn:not(.secondary){background:var(--green);border-color:var(--green)}.flash-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;gap:12px}.flash-nav .tiny{text-align:center}.flash-progress-bar{height:5px;background:var(--line);border-radius:4px;margin:20px 0}.flash-progress-bar span{height:100%;display:block;background:var(--green);border-radius:4px}.flash-count-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}.flash-count-row strong{color:var(--text)}.flash-sidebar .icon-btn{width:100%;margin:15px 0 3px}.flash-finish{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:35px;min-height:400px}.flash-finish h1{font-size:clamp(40px,4vw,60px);margin:25px 0}.flash-finish p{font-size:14px}.flash-summary-actions{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.flash-finish>.icon-btn{margin-top:10px}@media(max-width:900px){.flash-toolbar{flex-wrap:wrap;gap:15px}.flash-toolbar>div{min-width:200px}.flash-layout{grid-template-columns:minmax(0,1fr) 225px}.flash-card{padding:25px}}@media(max-width:760px){.flash-layout{grid-template-columns:1fr}.flash-toolbar>div{flex-basis:100%}.flash-toolbar .checkline{flex:1;white-space:normal}.flash-sidebar{order:2}.flash-card{min-height:340px}.flash-nav .tiny{max-width:140px}.flash-finish{padding:25px}.flash-meta{font-size:10px}}@media(max-width:420px){.flash-ratings .btn{padding:13px 10px;font-size:12px}.flash-nav{flex-wrap:wrap}.flash-nav .tiny{order:3;max-width:none;width:100%}.flash-flip-hint span{display:none}.flash-main{font-size:23px}}
+</style></head>
+<body>
+<header class="topbar"><a class="brand" href="#" id="brand" aria-label="Millionaire Lab home"><span class="brand-mark">M<span>✦</span></span><span>MILLIONAIRE<span class="brand-sub">THE OPERATING SYSTEMS LAB</span></span></a><div class="top-tools"><span class="course-tag">CGS1700 / MIDTERM</span><button id="sound" class="icon-btn" aria-label="Enable sound" title="Sound (M)">Sound off</button><button id="fullscreen" class="icon-btn" title="Fullscreen (F)">Fullscreen</button><button id="help" class="icon-btn" aria-label="Game instructions">?</button></div></header>
+<main id="app"></main><div id="live" class="sr-only" role="status" aria-live="polite"></div>
+<footer class="footer"><span>BUILT FOR THE CLASSROOM</span><span>Learn the system. Climb the ladder.</span><span>Osse Laborde / CGS1700</span></footer>
+<dialog id="modal"><div id="modal-body"></div><button id="close-modal" class="btn secondary">Back to game</button></dialog>
+<script>
+const QUESTION_BANK = [
+  {
+    "id": 1,
+    "category": "Computer & Registers",
+    "question": "Name the four main structural elements of a computer system.",
+    "options": [
+      "Hard drive, browser, printer, and router",
+      "CPU, monitor, keyboard, and mouse",
+      "Processor, main memory, I/O modules, and system bus",
+      "RAM, cache, compiler, and operating system"
+    ],
+    "answer": 2,
+    "explanation": "These four parts make up the basic computer system. Ask students which part stores active programs."
+  },
+  {
+    "id": 2,
+    "category": "Computer & Registers",
+    "question": "Which register holds the address of the next instruction to be fetched?",
+    "options": [
+      "Instruction Register",
+      "Memory Buffer Register",
+      "Program Counter",
+      "Stack Pointer"
+    ],
+    "answer": 2,
+    "explanation": "The Program Counter points to the next instruction. It holds an address, not the instruction itself."
+  },
+  {
+    "id": 3,
+    "category": "Computer & Registers",
+    "question": "Which register holds the instruction after it has been fetched from memory?",
+    "options": [
+      "Instruction Register",
+      "Memory Address Register",
+      "Program Counter",
+      "Memory Buffer Register"
+    ],
+    "answer": 0,
+    "explanation": "The Instruction Register holds the current instruction while the processor decodes and executes it."
+  },
+  {
+    "id": 4,
+    "category": "Computer & Registers",
+    "question": "Which register holds the address of the memory location being read or written?",
+    "options": [
+      "Instruction Register",
+      "Memory Address Register",
+      "Program Counter",
+      "Memory Buffer Register"
+    ],
+    "answer": 1,
+    "explanation": "MAR identifies the memory location involved in the transfer. Compare MAR with MBR."
+  },
+  {
+    "id": 5,
+    "category": "Computer & Registers",
+    "question": "Which register holds data moving to memory or data just received from memory?",
+    "options": [
+      "Instruction Register",
+      "Program Counter",
+      "Memory Buffer Register",
+      "Memory Address Register"
+    ],
+    "answer": 2,
+    "explanation": "MBR temporarily holds data during a memory transfer."
+  },
+  {
+    "id": 6,
+    "category": "Computer & Registers",
+    "question": "What are the two basic steps of instruction processing?",
+    "options": [
+      "Read and write",
+      "Fetch and execute",
+      "Compile and run",
+      "Load and store"
+    ],
+    "answer": 1,
+    "explanation": "The CPU first fetches an instruction, then executes it."
+  },
+  {
+    "id": 7,
+    "category": "Computer & Registers",
+    "question": "What does the system bus move among the processor, memory, and I/O modules?",
+    "options": [
+      "Only data",
+      "Only control signals",
+      "Data, addresses, and control signals",
+      "Only instructions"
+    ],
+    "answer": 2,
+    "explanation": "The bus is the computer's shared communication path."
+  },
+  {
+    "id": 8,
+    "category": "Computer & Registers",
+    "question": "What is cache memory?",
+    "options": [
+      "A section of virtual memory on disk",
+      "Small, fast memory between the processor and main memory",
+      "A storage device used only for backups",
+      "A permanent copy of every file"
+    ],
+    "answer": 1,
+    "explanation": "Cache keeps frequently needed data closer to the processor."
+  },
+  {
+    "id": 9,
+    "category": "Computer & Registers",
+    "question": "What does cache hit ratio measure?",
+    "options": [
+      "The number of CPU cores",
+      "The size of the cache",
+      "How often data is found in cache",
+      "How fast the processor runs"
+    ],
+    "answer": 2,
+    "explanation": "A higher hit ratio means fewer slow main-memory accesses."
+  },
+  {
+    "id": 10,
+    "category": "Computer & Registers",
+    "question": "What is the difference between SMP and multicore?",
+    "options": [
+      "SMP uses cache; multicore does not",
+      "SMP uses one core; multicore uses one processor",
+      "They are two names for the same hardware",
+      "SMP uses multiple processors; multicore puts multiple processors on one chip"
+    ],
+    "answer": 3,
+    "explanation": "Both support parallel work, but they describe different hardware organization."
+  },
+  {
+    "id": 11,
+    "category": "Interrupts & I/O",
+    "question": "What is an interrupt?",
+    "options": [
+      "A permanent processor failure",
+      "A signal or event that asks the processor for attention",
+      "A program that runs only in memory",
+      "A type of cache miss"
+    ],
+    "answer": 1,
+    "explanation": "Interrupts let the processor respond to events without constantly polling devices."
+  },
+  {
+    "id": 12,
+    "category": "Interrupts & I/O",
+    "question": "What does an interrupt handler do?",
+    "options": [
+      "Creates a new process",
+      "Identifies the interrupt and performs the needed service routine",
+      "Stores every program on disk",
+      "Prevents all input and output"
+    ],
+    "answer": 1,
+    "explanation": "The handler runs after the processor saves enough state."
+  },
+  {
+    "id": 13,
+    "category": "Interrupts & I/O",
+    "question": "A device is ready to receive more data from the processor. What signal does it send?",
+    "options": [
+      "A cache hit",
+      "A context switch",
+      "A ready signal",
+      "A page fault"
+    ],
+    "answer": 2,
+    "explanation": "A ready signal tells the processor the device can accept another transfer."
+  },
+  {
+    "id": 14,
+    "category": "Interrupts & I/O",
+    "question": "Why can interrupt-driven I/O improve processor utilization?",
+    "options": [
+      "The processor never has to save state",
+      "It removes the need for device drivers",
+      "The processor can do other work while I/O continues",
+      "It makes devices faster than memory"
+    ],
+    "answer": 2,
+    "explanation": "The processor does not need to sit and wait for a slow device."
+  },
+  {
+    "id": 15,
+    "category": "Interrupts & I/O",
+    "question": "What does DMA stand for?",
+    "options": [
+      "Data Memory Address",
+      "Dynamic Module Allocation",
+      "Direct Memory Access",
+      "Device Management Array"
+    ],
+    "answer": 2,
+    "explanation": "DMA is designed for moving blocks of data efficiently."
+  },
+  {
+    "id": 16,
+    "category": "Interrupts & I/O",
+    "question": "Why is DMA useful for a multiple-word I/O transfer?",
+    "options": [
+      "It disables interrupts during I/O",
+      "It moves a block between a device and main memory with little processor involvement",
+      "It permanently stores the data in cache",
+      "It makes every transfer use the CPU twice"
+    ],
+    "answer": 1,
+    "explanation": "DMA means the CPU does not manage every individual word."
+  },
+  {
+    "id": 17,
+    "category": "Interrupts & I/O",
+    "question": "During interrupt processing, what must the processor preserve before it services the interrupt?",
+    "options": [
+      "The entire hard drive",
+      "The processor's clock speed",
+      "All user files",
+      "Enough of the current program state to resume correctly"
+    ],
+    "answer": 3,
+    "explanation": "Saving state lets the interrupted program continue as if it was only briefly paused."
+  },
+  {
+    "id": 18,
+    "category": "Interrupts & I/O",
+    "question": "True or false: The processor cannot execute other instructions while an I/O operation is in progress when interrupts are used.",
+    "options": [
+      "Only with cache memory",
+      "Only during DMA",
+      "True",
+      "False"
+    ],
+    "answer": 3,
+    "explanation": "False. Interrupt-driven I/O lets the CPU do other work until the device needs attention."
+  },
+  {
+    "id": 19,
+    "category": "Interrupts & I/O",
+    "question": "What kind of processor commonly handles streaming audio and video signals?",
+    "options": [
+      "Memory Management Unit",
+      "Digital Signal Processor (DSP)",
+      "Graphics card driver",
+      "Program Counter"
+    ],
+    "answer": 1,
+    "explanation": "DSPs are designed for repeated, high-speed signal calculations."
+  },
+  {
+    "id": 20,
+    "category": "Interrupts & I/O",
+    "question": "Put these steps in the correct interrupt order.",
+    "options": [
+      "Execute handler, interrupt occurs, save state, return to program",
+      "Save state, return to program, interrupt occurs, execute handler",
+      "Interrupt occurs, save state, execute handler, return to program",
+      "Return to program, save state, execute handler, interrupt occurs"
+    ],
+    "answer": 2,
+    "explanation": "Saving state before the handler allows the original program to resume correctly."
+  },
+  {
+    "id": 21,
+    "category": "Memory & Addressing",
+    "question": "What is a logical address?",
+    "options": [
+      "An address used by a program that is independent of its physical location",
+      "A name for a memory partition",
+      "The exact hardware location in RAM",
+      "An address used only on a hard drive"
+    ],
+    "answer": 0,
+    "explanation": "Logical addresses let programs work even when placed in different physical locations."
+  },
+  {
+    "id": 22,
+    "category": "Memory & Addressing",
+    "question": "What is a physical address?",
+    "options": [
+      "The actual location in main memory",
+      "A page number with no offset",
+      "A location in a CPU register",
+      "An address stored only in a source code comment"
+    ],
+    "answer": 0,
+    "explanation": "This is the real hardware location where a word is stored."
+  },
+  {
+    "id": 23,
+    "category": "Memory & Addressing",
+    "question": "What is a relative address?",
+    "options": [
+      "A logical address expressed relative to a known point",
+      "A memory address that cannot change",
+      "A fixed physical address in memory",
+      "An address outside the program"
+    ],
+    "answer": 0,
+    "explanation": "Relative addressing helps a program work when its location changes."
+  },
+  {
+    "id": 24,
+    "category": "Memory & Addressing",
+    "question": "What is internal fragmentation?",
+    "options": [
+      "Free memory split into scattered holes",
+      "Wasted space inside an allocated block",
+      "A cache line that misses",
+      "A process waiting for a resource"
+    ],
+    "answer": 1,
+    "explanation": "The allocated block is larger than the data placed inside it."
+  },
+  {
+    "id": 25,
+    "category": "Memory & Addressing",
+    "question": "What is external fragmentation?",
+    "options": [
+      "A page stored outside RAM",
+      "A fault caused by a bad address",
+      "Wasted space inside one allocated block",
+      "Free memory split into scattered holes"
+    ],
+    "answer": 3,
+    "explanation": "Total free memory may be enough, but not available as one useful continuous block."
+  },
+  {
+    "id": 26,
+    "category": "Memory & Addressing",
+    "question": "What technique can reduce external fragmentation by moving processes together?",
+    "options": [
+      "Paging",
+      "Compaction",
+      "Spooling",
+      "Busy waiting"
+    ],
+    "answer": 1,
+    "explanation": "Compaction combines scattered holes, though moving processes takes time."
+  },
+  {
+    "id": 27,
+    "category": "Memory & Addressing",
+    "question": "In dynamic partitioning, what does best-fit choose?",
+    "options": [
+      "The smallest free block large enough for the request",
+      "The largest free block in memory",
+      "The last block that was used",
+      "The first free block in memory"
+    ],
+    "answer": 0,
+    "explanation": "Best-fit can leave many tiny holes behind."
+  },
+  {
+    "id": 28,
+    "category": "Memory & Addressing",
+    "question": "In dynamic partitioning, what does next-fit do?",
+    "options": [
+      "Always starts at the first address",
+      "Moves every process before allocating",
+      "Chooses the smallest remaining block",
+      "Continues its search from the last placement"
+    ],
+    "answer": 3,
+    "explanation": "Next-fit avoids always scanning from the beginning."
+  },
+  {
+    "id": 29,
+    "category": "Memory & Addressing",
+    "question": "What is an overlay?",
+    "options": [
+      "A duplicate cache line",
+      "A second operating system loaded at boot",
+      "Program modules take turns using the same memory region",
+      "A memory protection error"
+    ],
+    "answer": 2,
+    "explanation": "Overlays let a program run when all its modules cannot fit in memory at once."
+  },
+  {
+    "id": 30,
+    "category": "Memory & Addressing",
+    "question": "What two pieces work together to enforce memory protection?",
+    "options": [
+      "The hard drive and cache",
+      "The compiler and text editor",
+      "The keyboard and monitor",
+      "The operating system and processor hardware"
+    ],
+    "answer": 3,
+    "explanation": "The OS sets rules and hardware enforces address and access checks."
+  },
+  {
+    "id": 31,
+    "category": "Concurrency Tools",
+    "question": "What is a critical section?",
+    "options": [
+      "A section of memory that cannot be read",
+      "Code that accesses a shared resource and must not run concurrently with a matching section",
+      "A process that has ended",
+      "The fastest part of a program"
+    ],
+    "answer": 1,
+    "explanation": "Critical sections protect shared data from conflicting updates."
+  },
+  {
+    "id": 32,
+    "category": "Concurrency Tools",
+    "question": "What does mutual exclusion guarantee?",
+    "options": [
+      "No process can access memory",
+      "Every thread runs at the same time",
+      "Only one process or thread enters a critical section at a time",
+      "The scheduler always uses round robin"
+    ],
+    "answer": 2,
+    "explanation": "Mutual exclusion prevents conflicting operations on one shared resource."
+  },
+  {
+    "id": 33,
+    "category": "Concurrency Tools",
+    "question": "What is a race condition?",
+    "options": [
+      "A thread that reaches the end first",
+      "A memory partition with unused space",
+      "A result that depends on timing or order of concurrent operations",
+      "A process that uses too much CPU"
+    ],
+    "answer": 2,
+    "explanation": "Two threads updating one counter is the classic example."
+  },
+  {
+    "id": 34,
+    "category": "Concurrency Tools",
+    "question": "What is a semaphore?",
+    "options": [
+      "A hardware cache level",
+      "An integer value used for signaling and synchronization",
+      "A type of memory allocation",
+      "A CPU register for the next instruction"
+    ],
+    "answer": 1,
+    "explanation": "Wait and signal coordinate access to shared resources."
+  },
+  {
+    "id": 35,
+    "category": "Concurrency Tools",
+    "question": "What is a binary semaphore?",
+    "options": [
+      "A semaphore with two queues",
+      "A semaphore for two processors only",
+      "A semaphore that uses base-two addresses",
+      "A semaphore that can be 0 or 1"
+    ],
+    "answer": 3,
+    "explanation": "It works as a simple lock or availability signal."
+  },
+  {
+    "id": 36,
+    "category": "Concurrency Tools",
+    "question": "What is spin waiting, also called busy waiting?",
+    "options": [
+      "Repeatedly checking a lock while using processor time",
+      "Saving a process to disk",
+      "Moving processes together in memory",
+      "Switching from user mode to kernel mode"
+    ],
+    "answer": 0,
+    "explanation": "It can be acceptable for a very short wait, but wastes CPU time for a long wait."
+  },
+  {
+    "id": 37,
+    "category": "Concurrency Tools",
+    "question": "What is a monitor?",
+    "options": [
+      "A queue used only by printers",
+      "A screen that displays system output",
+      "A processor that watches for interrupts",
+      "A construct that bundles shared variables, access procedures, and initialization code"
+    ],
+    "answer": 3,
+    "explanation": "Monitors provide controlled synchronization and are often easier than raw semaphores."
+  },
+  {
+    "id": 38,
+    "category": "Concurrency Tools",
+    "question": "What is a condition variable used for?",
+    "options": [
+      "To block a process or thread until a condition becomes true",
+      "To store an I/O buffer",
+      "To measure cache performance",
+      "To hold the next instruction address"
+    ],
+    "answer": 0,
+    "explanation": "A wait releases the associated lock and blocks the thread. After waking and reacquiring the lock, the thread rechecks the condition in a loop."
+  },
+  {
+    "id": 39,
+    "category": "Concurrency Tools",
+    "question": "What is the difference between a strong and a weak semaphore?",
+    "options": [
+      "A weak semaphore always blocks",
+      "There is no difference",
+      "A strong semaphore stores more data",
+      "A strong semaphore has a fair release order; a weak semaphore has no guaranteed order"
+    ],
+    "answer": 3,
+    "explanation": "Fair ordering reduces the chance a waiting process is skipped indefinitely."
+  },
+  {
+    "id": 40,
+    "category": "Concurrency Tools",
+    "question": "What is starvation?",
+    "options": [
+      "A runnable process waits indefinitely because others keep getting chosen",
+      "A process has no memory pages",
+      "A CPU has no cache",
+      "A set of processes are permanently blocked waiting on each other"
+    ],
+    "answer": 0,
+    "explanation": "Starvation differs from deadlock because other work still makes progress."
+  },
+  {
+    "id": 41,
+    "category": "Threads & Deadlocks",
+    "question": "What is the difference between a process and a thread?",
+    "options": [
+      "A thread cannot be scheduled",
+      "A process owns resources and an address space; a thread is an execution path inside it",
+      "A process is always faster than a thread",
+      "A thread owns all system memory; a process owns none"
+    ],
+    "answer": 1,
+    "explanation": "Threads in one process share many resources but have their own execution state."
+  },
+  {
+    "id": 42,
+    "category": "Threads & Deadlocks",
+    "question": "Name the three key thread states used in basic models.",
+    "options": [
+      "Read, write, and execute",
+      "Running, ready, and blocked",
+      "Fast, slow, and paused",
+      "New, old, and terminated"
+    ],
+    "answer": 1,
+    "explanation": "A thread uses the CPU, waits for CPU time, or waits for an event."
+  },
+  {
+    "id": 43,
+    "category": "Threads & Deadlocks",
+    "question": "What does it mean when a thread is in the ready state?",
+    "options": [
+      "It is waiting for an I/O event",
+      "It has ended",
+      "It is executing now",
+      "It can run but is waiting for processor time"
+    ],
+    "answer": 3,
+    "explanation": "Ready is different from blocked. A ready thread only needs to be scheduled."
+  },
+  {
+    "id": 44,
+    "category": "Threads & Deadlocks",
+    "question": "What does it mean when a thread is blocked?",
+    "options": [
+      "It has been permanently deleted",
+      "It is executing its critical section",
+      "It cannot run until an event happens",
+      "It is ready and waiting only for CPU time"
+    ],
+    "answer": 2,
+    "explanation": "An I/O completion or resource becoming available can unblock a thread."
+  },
+  {
+    "id": 45,
+    "category": "Threads & Deadlocks",
+    "question": "What is a user-level thread, or ULT?",
+    "options": [
+      "A thread that must be blocked",
+      "A thread managed by an application or user-level library",
+      "A thread managed directly by hardware cache",
+      "A thread that can run only on one processor"
+    ],
+    "answer": 1,
+    "explanation": "An application library manages user-level threads. In a many-to-one model, a blocking system call can block all user threads sharing that kernel thread."
+  },
+  {
+    "id": 46,
+    "category": "Threads & Deadlocks",
+    "question": "What is a kernel-level thread, or KLT?",
+    "options": [
+      "A thread the operating system kernel knows about and can schedule",
+      "A thread that cannot use I/O",
+      "A thread that runs only in user mode",
+      "A thread stored permanently in cache"
+    ],
+    "answer": 0,
+    "explanation": "The kernel can schedule KLTs independently across processors."
+  },
+  {
+    "id": 47,
+    "category": "Threads & Deadlocks",
+    "question": "What is deadlock?",
+    "options": [
+      "A process using too much memory",
+      "A cache miss in main memory",
+      "Permanent blocking of processes that wait for events only another blocked process can cause",
+      "A thread waiting briefly for CPU time"
+    ],
+    "answer": 2,
+    "explanation": "No member of the deadlocked set can make progress without help from another stuck member."
+  },
+  {
+    "id": 48,
+    "category": "Threads & Deadlocks",
+    "question": "Name the four necessary conditions for deadlock.",
+    "options": [
+      "Mutual exclusion, hold and wait, no preemption, and circular wait",
+      "Fetch, decode, execute, and store",
+      "Ready, running, blocked, and terminated",
+      "Best-fit, next-fit, compaction, and paging"
+    ],
+    "answer": 0,
+    "explanation": "All four must be possible for deadlock to occur."
+  },
+  {
+    "id": 49,
+    "category": "Threads & Deadlocks",
+    "question": "What is circular wait?",
+    "options": [
+      "A scheduler that switches threads in a circle",
+      "A closed chain where each process waits for a resource held by the next",
+      "A process that restarts after every interrupt",
+      "A repeated cache lookup"
+    ],
+    "answer": 1,
+    "explanation": "Circular wait completes the dependency loop that prevents progress."
+  },
+  {
+    "id": 50,
+    "category": "Threads & Deadlocks",
+    "question": "What is the difference between deadlock prevention, avoidance, and detection?",
+    "options": [
+      "Prevention blocks a needed condition; avoidance makes safe choices; detection finds deadlock after allocations",
+      "Prevention uses cache; avoidance uses DMA; detection uses interrupts",
+      "Prevention waits; avoidance terminates; detection ignores deadlock",
+      "They are three names for the same method"
+    ],
+    "answer": 0,
+    "explanation": "Banker's algorithm is an example of avoidance."
+  }
+];
+if(typeof module!=="undefined") module.exports=QUESTION_BANK;
+
+</script><script>
+/* Pure game rules, shared by the UI and node tests. */
+(function(root){
+ const LADDER=[100,200,300,500,1000,2000,4000,8000,16000,32000,64000,125000,250000,500000,1000000];
+ const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+ function create(bank,config){
+  let pool=bank.filter(q=>config.category==='all'||q.category===config.category);
+  if(config.mode==='challenge') pool=[...new Set(bank.map(q=>q.category))].flatMap(c=>shuffle(bank.filter(q=>q.category===c)).slice(0,3));
+  else if(config.shuffle) pool=shuffle(pool);
+  return {version:1,config,questions:pool.map(q=>({...q,options:[...q.options]})),index:0,phase:'question',selected:null,hidden:[],remaining:config.seconds,paused:false,team:0,teams:config.names.map(name=>({name,score:0,correct:0,attempts:0,lives:{half:true,class:true,friend:true}})),history:[],bank:0,guaranteed:0,started:new Date().toISOString()};
+ }
+ function resolve(g,timedOut=false){
+  if(g.phase!=='question'||(!timedOut&&g.selected===null))return false;
+  const q=g.questions[g.index],correct=!timedOut&&g.selected===q.answer,t=g.teams[g.team];
+  t.attempts++;if(correct){t.correct++;t.score+=100}
+  if(g.config.mode==='challenge'&&correct){g.bank=LADDER[g.index];if([4,9,14].includes(g.index))g.guaranteed=g.bank}
+  if(g.config.mode==='challenge'&&!correct)g.bank=g.guaranteed;
+  g.history.push({id:q.id,question:q.question,category:q.category,team:t.name,chosen:timedOut?'Time expired':q.options[g.selected],answer:q.options[q.answer],correct,points:correct?100:0,secondsLeft:g.remaining});
+  g.phase='feedback';g.lastCorrect=correct;g.timedOut=timedOut;return true;
+ }
+ function advance(g){
+  if(g.phase!=='feedback')return false;
+  if(g.index===g.questions.length-1||(g.config.mode==='challenge'&&!g.lastCorrect)){g.phase='results';return true}
+  g.index++;g.team=(g.team+1)%g.teams.length;g.selected=null;g.hidden=[];g.phase='question';g.remaining=g.config.seconds;g.paused=false;return true;
+ }
+ function half(g){if(g.phase!=='question'||!g.teams[g.team].lives.half)return false;g.teams[g.team].lives.half=false;g.hidden=shuffle([0,1,2,3].filter(i=>i!==g.questions[g.index].answer)).slice(0,2);if(g.hidden.includes(g.selected))g.selected=null;return true}
+ const api={LADDER,shuffle,create,resolve,advance,half};if(typeof module!=='undefined')module.exports=api;root.GameEngine=api;
+})(typeof window!=='undefined'?window:globalThis);
+
+</script><script>
+/* Flashcard progress is separate from the quiz score and saved game. */
+(function(root){
+ function create(bank,{category='all',reviewOnly=false,shuffle=false,ratings={}}={}){
+  let ids=bank.filter(q=>(category==='all'||q.category===category)&&(!reviewOnly||ratings[q.id]==='again')).map(q=>q.id);
+  if(shuffle){ids=[...ids];for(let i=ids.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]]}}
+  return {version:1,category,reviewOnly,shuffle,ratings:{...ratings},ids,index:0,complete:ids.length===0,pass:{}};
+ }
+ function rate(s,rating){if(s.complete||!['known','again'].includes(rating)||!s.ids.length)return false;const id=s.ids[s.index];s.ratings[id]=rating;s.pass[id]=rating;next(s);return true}
+ function next(s){if(s.complete)return false;if(s.index<s.ids.length-1)s.index++;else s.complete=true;return true}
+ function previous(s){if(!s.ids.length||s.index===0&&!s.complete)return false;if(s.complete)s.complete=false;else s.index--;return true}
+ function counts(s){return {known:s.ids.filter(id=>s.ratings[id]==='known').length,again:s.ids.filter(id=>s.ratings[id]==='again').length,unrated:s.ids.filter(id=>!s.ratings[id]).length}}
+ function restore(raw,bank){try{const s=JSON.parse(raw),ids=new Set(bank.map(q=>q.id)),cats=new Set(bank.map(q=>q.category));if(s?.version!==1||!Array.isArray(s.ids)||!s.ids.every(id=>ids.has(id))||new Set(s.ids).size!==s.ids.length||!Number.isInteger(s.index)||s.index<0||s.index>=Math.max(1,s.ids.length)||typeof s.complete!=='boolean'||(!s.ids.length&&!s.complete)||!s.ratings||typeof s.ratings!=='object'||Array.isArray(s.ratings)||!s.pass||typeof s.pass!=='object'||Array.isArray(s.pass)||(s.category!=='all'&&!cats.has(s.category)))return null;for(const [id,value] of Object.entries(s.ratings))if(!ids.has(Number(id))||!['known','again'].includes(value))return null;return s}catch{return null}}
+ const api={create,rate,next,previous,counts,restore};if(typeof module!=='undefined')module.exports=api;root.FlashcardEngine=api;
+})(typeof window!=='undefined'?window:globalThis);
+
+</script><script>
+'use strict';
+const $=s=>document.querySelector(s),E=GameEngine,letters='ABCD',money=n=>'$'+n.toLocaleString(),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='cgs1700-millionaire-v1';let game=null,mode='review',sound=false,audio=null,ticker=null,friendTicker=null,pollVotes=[0,0,0,0],ambientTimer=null,modalWasPaused=false,homeScreen=true,volume=.22,suspense=false;
+function storageGet(k){try{return localStorage.getItem(k)}catch{return null}}
+function storageSet(k,v){try{localStorage.setItem(k,v)}catch{$('#live').textContent='Progress cannot be saved in this browser. Keep this tab open.'}}
+function saved(){try{const s=JSON.parse(storageGet(KEY));if(s?.version===1&&Array.isArray(s.questions)&&s.questions.length&&Array.isArray(s.teams)&&s.index>=0&&s.index<s.questions.length&&['question','feedback','results'].includes(s.phase))return s}catch{}return null}
+function save(){if(game)storageSet(KEY,JSON.stringify(game))}
+function initAudio(){if(!audio){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audio=new AC()}audio?.resume().catch(()=>{})}
+function tone(freq,start,duration,type='sine',gain=1){if(!sound||!audio)return;const o=audio.createOscillator(),v=audio.createGain(),t=audio.currentTime+start;o.type=type;o.frequency.value=freq;v.gain.setValueAtTime(0,t);v.gain.linearRampToValueAtTime(volume*gain,t+.02);v.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(v);v.connect(audio.destination);o.start(t);o.stop(t+duration+.05)}
+function cue(kind){if(!sound)return;initAudio();const sounds={start:[392,523.25,659.25,783.99],select:[330],lock:[220,293.66],correct:[523.25,659.25,783.99,1046.5],wrong:[220,164.81,110],tick:[880],win:[392,523.25,659.25,783.99,1046.5,1318.5],help:[440,554.37]};(sounds[kind]||sounds.select).forEach((n,i)=>tone(n,i*.14,kind==='tick'?.08:.55,'sine',kind==='tick'?.25:.55))}
+function stopAmbient(){clearInterval(ambientTimer);ambientTimer=null}
+function startAmbient(){stopAmbient();if(window.FlashcardUI?.isActive()||!sound||!suspense)return;let n=0;ambientTimer=setInterval(()=>{if(game?.phase==='question'&&!game.paused&&!$('#modal').open){tone([98,110,130.81,110][n++%4],0,.9,'sine',.14)}},900)}
+function updateSound(){const b=$('#sound');b.textContent=sound?'Sound on':'Sound off';b.setAttribute('aria-pressed',sound);b.setAttribute('aria-label',sound?'Mute sound':'Enable sound');if(!sound)stopAmbient()}
+$('#sound').onclick=()=>{sound=!sound;initAudio();updateSound();if(sound){cue('select');startAmbient()}storageSet('cgs-sound',JSON.stringify(sound))};
+$('#fullscreen').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.().catch(()=>{});else document.exitFullscreen?.()};
+$('#brand').onclick=e=>{e.preventDefault();if(game&&game.phase!=='results'&&!homeScreen){showModal('<h2>Return to setup?</h2><p>Your current game will stay saved. You can resume it from the home screen.</p><button class="btn" id="go-home">Save and return</button>');$('#go-home').onclick=()=>{closeModal();clearInterval(ticker);stopAmbient();save();renderHome()}}else renderHome()};
+function showModal(html){modalWasPaused=!!game?.paused;if(game)game.paused=true;save();$('#modal-body').innerHTML=html;$('#modal').showModal();updateClock()}
+function closeModal(){clearInterval(friendTicker);friendTicker=null;$('#modal').close();if(game){game.paused=modalWasPaused;save();updateClock()}}
+$('#close-modal').onclick=closeModal;$('#modal').addEventListener('cancel',e=>{e.preventDefault();closeModal()});
+$('#help').onclick=()=>showModal(`<h2>How to play</h2><ul class="help-items"><li><b>Flashcards:</b> choose “Study with flashcards” on the home screen. Recall the answer, flip the card, then mark “Got it” or “Review again”. Filter by topic, shuffle, or study just your review pile. Flashcard ratings save separately from quiz scores.</li><li><b>Classroom review:</b> all 50 questions, or one topic. Teams alternate turns. A correct answer earns 100 points. Misses earn 0 and the review continues.</li><li><b>Millionaire challenge:</b> 15 questions, three from each topic. One wrong answer ends the run. Correct answers replace your bank with that rung's value. Safety nets: $1,000 at question 5 and $32,000 at question 10. Walk away to keep your current bank.</li><li>Each team gets one of each lifeline per game. 50:50 removes two incorrect choices. Ask the Class lets the host enter real vote counts. Phone a Friend gives 30 seconds to consult someone nearby.</li><li>Select A–D, then lock your final answer. The clock continues until you lock. A timeout counts as a miss.</li><li>Progress saves on this browser. Results are local and can be exported as CSV. No remote multiplayer connection is required.</li></ul><p><b>Keys:</b> A–D choose, Enter locks or continues, Space pauses, M toggles sound, F opens fullscreen. Enable sound once before playing. Classroom dollars are fictional.</p><label for="volume">Sound volume</label><input id="volume" type="range" min="0" max="0.6" step="0.02" value="${volume}">`);
+$('#modal').addEventListener('input',e=>{if(e.target.id==='volume')volume=Number(e.target.value)});
+function renderHome(){window.FlashcardUI?.deactivate();homeScreen=true;clearInterval(ticker);stopAmbient();document.body.classList.remove('projector');const old=saved();$('#app').innerHTML=`${old&&old.phase!=='results'?`<div class="resume"><span>A game is in progress · Question ${old.index+1} of ${old.questions.length}</span><button id="resume" class="btn secondary">Resume game ↗</button></div>`:''}<section class="hero"><div class="hero-copy"><div class="eyebrow">THE MIDTERM, REIMAGINED</div><h1>Big questions.<br><em>Million-dollar</em><br>thinking.</h1><p class="intro">Your operating systems review takes the hot seat. Think it through, call a lifeline, and make it your final answer.</p><div class="stats"><div><strong>50</strong><span>course questions</span></div><div><strong>5</strong><span>study areas</span></div><div><strong>3</strong><span>lifelines per team</span></div></div><div class="topic-list"><span>Computer & registers</span><span>Interrupts & I/O</span><span>Memory</span><span>Concurrency</span><span>Threads & deadlocks</span></div></div><section class="setup" aria-label="Game setup"><div class="setup-head"><h2>Your seat is ready</h2><span class="tiny">01 / SETUP</span></div><div class="mode-grid"><button class="mode ${mode==='review'?'active':''}" data-mode="review" aria-pressed="${mode==='review'}"><span class="mode-icon">▦</span><strong>Classroom review</strong><small>50 questions · up to 6 teams<br>Keep learning after a miss</small></button><button class="mode ${mode==='challenge'?'active':''}" data-mode="challenge" aria-pressed="${mode==='challenge'}"><span class="mode-icon">✦</span><strong>Millionaire challenge</strong><small>15 questions · one contestant<br>Climb to $1,000,000</small></button><button class="mode flash-mode" data-mode="flashcards"><strong>Study with flashcards ↗</strong><small>Flip answers · filter topics · track what you know</small></button></div><div class="form-row"><div><label for="seconds">Question timer</label><select id="seconds"><option value="45">45 seconds</option><option value="30">30 seconds</option><option value="60">60 seconds</option><option value="0">No timer</option></select></div><div><label for="team-count">Teams / contestants</label><select id="team-count" ${mode==='challenge'?'disabled':''}>${[1,2,3,4,5,6].map(n=>`<option value="${n}">${n===1?'Solo / one team':n+' teams'}</option>`).join('')}</select></div></div><label for="name-0">${mode==='challenge'?'Contestant':'Team'} name${mode==='review'?'s':''}</label><div id="team-inputs" class="team-inputs"><input id="name-0" maxlength="30" placeholder="${mode==='challenge'?'The contestant':'Team 1'}" aria-label="Team 1 name"></div>${mode==='review'?`<div class="form-row"><div><label for="category">Study area</label><select id="category"><option value="all">All 50 questions</option>${[...new Set(QUESTION_BANK.map(q=>q.category))].map(c=>`<option>${esc(c)}</option>`).join('')}</select></div><label class="checkline"><input type="checkbox" id="shuffle" checked> Shuffle questions</label></div>`:'<p class="compact-note">Three questions from each study area. Safety nets at $1,000 and $32,000. One wrong answer ends your run.</p>'}<label class="checkline"><input type="checkbox" id="projector">Projector view · larger question text</label><button id="start" class="btn wide">Let's play <span>↗</span></button><p class="fineprint">Progress saves here. No sign-up. Fictional game dollars.</p></section></section>`;
+ document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{if(b.dataset.mode==='flashcards'){window.FlashcardUI.open();return}mode=b.dataset.mode;renderHome()});$('#team-count').onchange=()=>{$('#team-inputs').innerHTML=Array.from({length:Number($('#team-count').value)},(_,i)=>`<input id="name-${i}" maxlength="30" placeholder="Team ${i+1}" aria-label="Team ${i+1} name">`).join('')};
+ if($('#resume'))$('#resume').onclick=()=>{game=old;if(game.phase==='question')game.paused=true;renderGame();startClock()};
+ $('#start').onclick=()=>{const names=Array.from($('#team-inputs').querySelectorAll('input')).map((n,i)=>n.value.trim()||`Team ${i+1}`);const unique=names.map((n,i)=>names.indexOf(n)!==i?`${n} (${i+1})`:n);game=E.create(QUESTION_BANK,{mode,seconds:Number($('#seconds').value),names:unique,category:$('#category')?.value||'all',shuffle:$('#shuffle')?.checked||false,projector:$('#projector').checked});initAudio();cue('start');save();renderGame();startClock()};
+}
+function renderGame(){window.FlashcardUI?.deactivate();homeScreen=false;document.body.classList.toggle('projector',game.config.projector);if(game.phase==='results'){renderResults();return}const q=game.questions[game.index],team=game.teams[game.team],feedback=game.phase==='feedback',challenge=game.config.mode==='challenge';$('#app').innerHTML=`<div class="game-layout"><section><div class="game-top"><div><div class="eyebrow">${challenge?'MILLIONAIRE CHALLENGE':'CLASSROOM REVIEW'}</div><h2>${esc(team.name)}<span class="tiny"> / ON THE HOT SEAT</span></h2></div><button id="exit" class="icon-btn">Save & exit</button></div><div class="round-track" aria-label="Game progress"><span style="width:${(game.index+(feedback?1:0))/game.questions.length*100}%"></span></div><div id="play-area" class="${game.paused&&!feedback?'paused':''}"><div class="question-card"><div class="question-meta"><span>QUESTION ${String(game.index+1).padStart(2,'0')} / ${game.questions.length} · ${esc(q.category)}</span><span class="value">${challenge?money(E.LADDER[game.index]):'+100 PTS'}</span></div><h2 id="question">${esc(q.question)}</h2></div><div class="answers" role="group" aria-labelledby="question">${q.options.map((o,i)=>`<button class="answer ${game.hidden.includes(i)?'eliminated':''} ${game.selected===i?'selected':''} ${feedback&&i===q.answer?'correct':''} ${feedback&&game.selected===i&&i!==q.answer?'wrong':''}" data-answer="${i}" ${feedback||game.hidden.includes(i)||game.paused?'disabled':''} aria-pressed="${game.selected===i}"><span class="letter">${letters[i]}</span><span>${game.hidden.includes(i)?'Choice removed':esc(o)}${feedback&&i===q.answer?' ✓':''}${feedback&&game.selected===i&&i!==q.answer?' ✕':''}</span></button>`).join('')}</div></div>${feedback?`<div class="feedback ${game.lastCorrect?'':'bad'}" role="status"><strong>${game.lastCorrect?'Correct. Well played.':game.timedOut?'Time is up. Let’s review.':'Let’s learn from this one.'}</strong><p><b>${letters[q.answer]}. ${esc(q.options[q.answer])}</b><br>${esc(q.explanation)}</p></div>`:''}<div class="actionbar"><div class="timer-wrap"><div class="timer" id="clock" aria-label="Seconds remaining">${game.config.seconds?Math.ceil(game.remaining):'∞'}</div><button id="pause" class="icon-btn" ${feedback?'disabled':''}>${game.paused?'Resume':'Pause'}</button><span class="keyhint">A–D to choose<br>Enter to ${feedback?'continue':'lock in'}</span></div><div class="control-row">${challenge&&!feedback?'<button id="walk" class="btn secondary">Walk away</button>':''}<button id="lock" class="btn" ${!feedback&&(game.selected===null||game.paused)?'disabled':''}>${feedback?(game.index===game.questions.length-1||(challenge&&!game.lastCorrect)?'See results':'Next question →'):'Final answer →'}</button></div></div><div class="lifelines"><button id="half" class="lifeline" ${!team.lives.half||feedback||game.paused?'disabled':''}>50:50<span>Remove two choices${!team.lives.half?' · used':''}</span></button><button id="class" class="lifeline" ${!team.lives.class||feedback||game.paused?'disabled':''}>Ask the Class<span>Collect a real vote${!team.lives.class?' · used':''}</span></button><button id="friend" class="lifeline" ${!team.lives.friend||feedback||game.paused?'disabled':''}>Phone a Friend<span>30 seconds of advice${!team.lives.friend?' · used':''}</span></button></div><div class="settings-line"><label class="checkline"><input type="checkbox" id="suspense" ${suspense?'checked':''}>Suspense audio</label><span>Optional · enable sound above</span></div></section><aside class="sidebar" aria-label="Scores">${challenge?`<div class="sidebar-title">YOUR BANK</div><div class="bank">${money(game.bank)}</div><div class="tiny">Guaranteed: ${money(game.guaranteed)}</div><ol class="ladder">${E.LADDER.map((n,i)=>`<li class="${i===game.index?'current':''} ${i<game.index?'done':''} ${[4,9,14].includes(i)?'safe':''}"><span>${String(i+1).padStart(2,'0')} ${[4,9].includes(i)?'◆':''}</span><span>${money(n)}</span></li>`).join('')}</ol><p class="compact-note">◆ Safety net<br>One wrong answer ends the run.</p>`:`<div class="sidebar-title">THE SCOREBOARD</div><div class="bank">${game.history.filter(h=>h.correct).length*100}<span style="font:12px Inter,system-ui"> PTS</span></div><div class="tiny">100 points per correct answer</div>${game.teams.map((t,i)=>`<div class="team-score ${i===game.team?'active':''}"><strong><span>${esc(t.name)}</span><span>${t.score}</span></strong><small>${t.correct} correct / ${t.attempts} answered ${i===game.team?'· playing now':''}</small></div>`).join('')}<p class="compact-note">${game.questions.length-game.index-(feedback?1:0)} questions remaining<br>Every team gets 3 lifelines.</p>`}</aside></div>`;
+ document.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>choose(Number(b.dataset.answer)));$('#lock').onclick=()=>feedback?next():lock();$('#pause').onclick=()=>{game.paused=!game.paused;save();renderGame()};$('#exit').onclick=()=>$('#brand').click();$('#suspense').onchange=()=>{suspense=$('#suspense').checked;startAmbient()};startAmbient();
+ $('#half').onclick=()=>{if(E.half(game)){cue('help');save();renderGame()}};$('#class').onclick=classHelp;$('#friend').onclick=friendHelp;
+ if($('#walk'))$('#walk').onclick=()=>{showModal(`<h2>Keep ${money(game.bank)}?</h2><p>Walking away ends this challenge and keeps your current bank.</p><button id="confirm-walk" class="btn">Walk away with ${money(game.bank)}</button>`);$('#confirm-walk').onclick=()=>{closeModal();game.walked=true;game.phase='results';save();renderResults()}};
+ updateClock();$('#live').textContent=feedback?(game.lastCorrect?'Correct answer':'Incorrect answer'):`Question ${game.index+1}. ${q.question}`;
+}
+function choose(i){if(!game||game.phase!=='question'||game.paused||game.hidden.includes(i)||$('#modal').open)return;game.selected=i;cue('select');save();renderGame()}
+function lock(timedOut=false){if(!game||game.paused||$('#modal').open)return;if(E.resolve(game,timedOut)){stopAmbient();cue(game.lastCorrect?'correct':'wrong');save();renderGame()}}
+function next(){if(E.advance(game)){cue(game.phase==='results'?'win':'select');save();renderGame()}}
+function updateClock(){const el=$('#clock');if(!el||!game)return;el.textContent=game.config.seconds?Math.ceil(game.remaining):'∞';el.classList.toggle('urgent',!!game.config.seconds&&game.remaining<=10&&!game.paused);el.setAttribute('aria-label',game.paused?'Timer paused':`${Math.ceil(game.remaining)} seconds remaining`)}
+function startClock(){clearInterval(ticker);let last=Date.now(),lastBeep=0; ticker=setInterval(()=>{const now=Date.now(),delta=(now-last)/1000;last=now;if(!game||homeScreen||game.phase!=='question'||game.paused||!game.config.seconds||$('#modal').open)return;game.remaining=Math.max(0,game.remaining-delta);const whole=Math.ceil(game.remaining);if(whole<=5&&whole!==lastBeep&&whole>0){cue('tick');lastBeep=whole}updateClock();save();if(game.remaining===0)lock(true)},150)}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&game?.phase==='question'&&!homeScreen){game.paused=true;save();renderGame()}});
+function classHelp(){if(!game.teams[game.team].lives.class)return;game.teams[game.team].lives.class=false;pollVotes=[0,0,0,0];cue('help');showModal(`<h2>Ask the Class</h2><p>The question clock is paused. Ask for a show of hands and enter the real counts below. These are classroom votes, not an answer prediction.</p>${letters.split('').map((l,i)=>`<div class="poll-row"><b>${l}</b><div class="poll-bar"><span id="bar-${i}" style="width:0%"></span></div><label class="sr-only" for="votes-${i}">Votes for ${l}</label><input id="votes-${i}" class="poll-num" type="number" min="0" max="999" value="0" data-vote="${i}"></div>`).join('')}<p id="poll-total" class="tiny">0 votes entered</p>`);document.querySelectorAll('[data-vote]').forEach(n=>n.oninput=()=>{const raw=Number(n.value);pollVotes[Number(n.dataset.vote)]=Number.isFinite(raw)?Math.max(0,Math.min(999,Math.floor(raw))):0;const sum=pollVotes.reduce((a,b)=>a+b,0);pollVotes.forEach((v,i)=>$('#bar-'+i).style.width=(sum?v/sum*100:0)+'%');$('#poll-total').textContent=`${sum} votes entered · ${pollVotes.map((v,i)=>letters[i]+': '+(sum?Math.round(v/sum*100):0)+'%').join(' / ')}`});save();refreshAfterModal()}
+function friendHelp(){if(!game.teams[game.team].lives.friend)return;game.teams[game.team].lives.friend=false;cue('help');showModal('<h2>Phone a Friend</h2><p>Pick a classmate or another team. You have 30 seconds to ask for advice. The question clock is paused.</p><div class="friend-time" id="friend-time">30</div><p id="friend-status">Your consultation starts now.</p>');let until=Date.now()+30000;friendTicker=setInterval(()=>{const left=Math.max(0,Math.ceil((until-Date.now())/1000));$('#friend-time').textContent=left;if(left===0){clearInterval(friendTicker);cue('help');$('#friend-status').textContent='Advice time is over. Return to the question.'}},200);save();refreshAfterModal()}
+function refreshAfterModal(){const once=()=>{renderGame();$('#modal').removeEventListener('close',once)};$('#modal').addEventListener('close',once)}
+function renderResults(){homeScreen=false;clearInterval(ticker);stopAmbient();save();const total=game.history.length,correct=game.history.filter(h=>h.correct).length,challenge=game.config.mode==='challenge',ranked=[...game.teams].sort((a,b)=>b.score-a.score),missed=total-correct;$('#app').innerHTML=`<section class="results-head"><div class="eyebrow">${challenge?'THE FINAL BANK':'THE CLASSROOM RESULTS'}</div><h1>${challenge?`<em>${money(game.bank)}</em>`:'Knowledge, <em>banked.</em>'}</h1><p>${game.walked?'You walked away with your bank.':challenge&&correct===15?'Fifteen correct answers. You reached the million!':challenge?'Every question is a chance to learn.':'The round is complete. Take a look at what clicked and what needs another pass.'}</p></section><section class="result-grid"><div class="stats"><div><strong>${correct}/${total}</strong><span>correct answers</span></div><div><strong>${total?Math.round(correct/total*100):0}%</strong><span>accuracy</span></div><div><strong>${missed}</strong><span>questions to revisit</span></div></div><table class="scoretable"><thead><tr><th>RANK</th><th>TEAM</th><th>POINTS</th><th>CORRECT</th></tr></thead><tbody>${ranked.map((t,i)=>`<tr><td>${i>0&&ranked[i-1].score===t.score?ranked.findIndex(r=>r.score===t.score)+1:i+1}</td><td>${esc(t.name)}</td><td>${t.score.toLocaleString()}</td><td>${t.correct} / ${t.attempts}</td></tr>`).join('')}</tbody></table><div class="result-actions"><button id="csv" class="btn">Export results ↓</button>${missed?'<button id="retry" class="btn secondary">Practice missed questions</button>':''}<button id="again" class="btn secondary">New game ↗</button></div><div class="review-list"><h2>Your answer review</h2>${game.history.length?game.history.map(h=>`<details class="review-item"><summary><span class="tag ${h.correct?'':'bad'}">${h.correct?'✓':'✕'}</span> ${esc(h.question)}</summary><p><b>${esc(h.team)}</b> chose: ${esc(h.chosen)}<br>Correct answer: ${esc(h.answer)}<br>${esc(QUESTION_BANK.find(q=>q.id===h.id)?.explanation||'')}</p></details>`).join(''):'<p>No questions answered in this run.</p>'}</div><p class="compact-note">Results stay in this browser. Export the CSV to keep a copy. Classroom points and fictional dollars are separate scores.</p></section>`;
+ $('#csv').onclick=exportCSV;$('#again').onclick=()=>{game=null;renderHome()};if($('#retry'))$('#retry').onclick=()=>{const ids=game.history.filter(h=>!h.correct).map(h=>h.id);const pool=QUESTION_BANK.filter(q=>ids.includes(q.id));game=E.create(pool,{...game.config,mode:'review',category:'all',names:['Practice'],shuffle:true});save();renderGame();startClock()};
+}
+function exportCSV(){const cell=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const safe=v=>/^[=+\-@\t\r]/.test(String(v))?"'"+v:v;const rows=[['CGS1700 Millionaire Lab','Started',game.started,'Mode',game.config.mode,'Bank',game.bank],['Team','Points','Correct','Attempts'],...game.teams.map(t=>[t.name,t.score,t.correct,t.attempts]),[],['Question ID','Category','Team','Question','Chosen answer','Correct answer','Correct','Points','Seconds left'],...game.history.map(h=>[h.id,h.category,h.team,h.question,h.chosen,h.answer,h.correct,h.points,Math.ceil(h.secondsLeft)])];const blob=new Blob(['\uFEFF'+rows.map(r=>r.map(v=>cell(safe(v))).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='CGS1700_results_'+new Date().toISOString().slice(0,10)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+document.addEventListener('keydown',e=>{if(window.FlashcardUI?.isActive())return;if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)||e.ctrlKey||e.metaKey||e.altKey)return;if($('#modal').open)return;const k=e.key.toLowerCase();if(k==='m'){$('#sound').click();return}if(k==='f'){$('#fullscreen').click();return}if(!game||homeScreen||game.phase==='results')return;if(letters.toLowerCase().includes(k)&&k.length===1){e.preventDefault();choose(letters.toLowerCase().indexOf(k))}if(k==='enter'){e.preventDefault();if(game.phase==='feedback')next();else lock()}if(k===' '){e.preventDefault();$('#pause')?.click()}});
+// Audio starts only after a user gesture, as browsers require.
+updateSound();renderHome();
+
+</script><script>
+'use strict';
+(function(){
+ const KEY='cgs1700-flashcards-v1',FE=FlashcardEngine;let active=false,state=null,revealed=false;
+ const persist=()=>storageSet(KEY,JSON.stringify(state));
+ function begin(category=state?.category||'all',reviewOnly=state?.reviewOnly||false,shuffle=state?.shuffle||false){state=FE.create(QUESTION_BANK,{category,reviewOnly,shuffle,ratings:state?.ratings||{}});revealed=false;persist();render()}
+ function open(){active=true;clearInterval(ticker);stopAmbient();homeScreen=true;document.body.classList.remove('projector');state=FE.restore(storageGet(KEY),QUESTION_BANK)||FE.create(QUESTION_BANK);revealed=false;render()}
+ function exit(){persist();active=false;renderHome()}
+ function flip(){if(state.complete)return;revealed=!revealed;cue('select');render();$('#flash-card')?.focus({preventScroll:true})}
+ function rate(r){if(!revealed||state.complete)return;if(FE.rate(state,r)){revealed=false;cue(r==='known'?'correct':'select');persist();render();$('#flash-card')?.focus({preventScroll:true})}}
+ function move(direction){const ok=direction<0?FE.previous(state):FE.next(state);if(ok){revealed=false;persist();render()}}
+ function render(){
+  active=true;const current=QUESTION_BANK.find(q=>q.id===state.ids[state.index]),scope=QUESTION_BANK.filter(q=>state.category==='all'||q.category===state.category),savedKnown=scope.filter(q=>state.ratings[q.id]==='known').length,savedAgain=scope.filter(q=>state.ratings[q.id]==='again').length,categories=[...new Set(QUESTION_BANK.map(q=>q.category))];
+  $('#app').innerHTML=`<section class="flash-shell"><div class="game-top"><div><div class="eyebrow">STUDY AT YOUR OWN PACE</div><h2>Flashcards<span class="tiny"> / CGS1700</span></h2></div><button id="flash-exit" class="icon-btn">Back to game setup</button></div><div class="flash-toolbar"><div><label for="flash-topic">Study area</label><select id="flash-topic"><option value="all">All 50 questions</option>${categories.map(c=>`<option value="${esc(c)}" ${state.category===c?'selected':''}>${esc(c)}</option>`).join('')}</select></div><label class="checkline"><input id="flash-review-filter" type="checkbox" ${state.reviewOnly?'checked':''}>Review again only (${savedAgain})</label><button id="flash-shuffle" class="btn secondary">Shuffle deck ↻</button></div><div class="flash-layout"><section><div class="round-track" aria-label="Pass progress"><span style="width:${state.complete?100:state.ids.length?state.index/state.ids.length*100:0}%"></span></div>${state.complete?`<div class="flash-finish"><div class="eyebrow">${state.ids.length?'PASS COMPLETE':'NO CARDS IN THIS PILE'}</div><h1>${state.ids.length?'A little more <em>confident.</em>':'A clear <em>review pile.</em>'}</h1><p>${state.ids.length?`You rated ${Object.keys(state.pass).length} of ${state.ids.length} cards in this pass. ${Object.values(state.pass).filter(v=>v==='known').length} marked “Got it” and ${Object.values(state.pass).filter(v=>v==='again').length} marked “Review again”.`:'Mark a card “Review again” during a full pass to add it here.'}</p><div class="flash-summary-actions"><button id="flash-all" class="btn">Study this topic again</button><button id="flash-again-pile" class="btn secondary" ${savedAgain?'':'disabled'}>Review again (${savedAgain})</button></div>${state.ids.length?'<button id="flash-return-last" class="icon-btn">← Back to last card</button>':''}</div>`:`<div class="flash-meta"><span>CARD ${String(state.index+1).padStart(2,'0')} / ${state.ids.length}</span><span>${esc(current.category)}</span></div><button id="flash-card" class="flash-card ${revealed?'is-revealed':''}" aria-label="${revealed?'Answer shown. Activate to show the question.':'Question shown. Activate to reveal the answer.'}" aria-pressed="${revealed}"><span class="flash-side">${revealed?'THE ANSWER':'THE QUESTION'}</span><span class="flash-main">${esc(revealed?current.options[current.answer]:current.question)}</span>${revealed?`<span class="flash-explanation">${esc(current.explanation)}</span>`:''}<span class="flash-flip-hint">${revealed?'↶ Show question':'↻ Reveal answer'}<span>Space or Enter</span></span></button><div class="flash-ratings"><button id="flash-again" class="btn secondary" ${revealed?'':'disabled'}>1 · Review again</button><button id="flash-known" class="btn" ${revealed?'':'disabled'}>2 · Got it</button></div><div class="flash-nav"><button id="flash-prev" class="icon-btn" ${state.index?'':'disabled'}>← Previous</button><span class="tiny">${state.ratings[current.id]==='known'?'Saved: Got it':state.ratings[current.id]==='again'?'Saved: Review again':'Reveal the answer, then rate your recall'}</span><button id="flash-next" class="icon-btn">${state.index===state.ids.length-1?'Finish pass':'Skip / next →'}</button></div>`}</section><aside class="sidebar flash-sidebar"><div class="sidebar-title">YOUR STUDY PROGRESS</div><div class="bank">${savedKnown}<span class="tiny"> / ${scope.length}</span></div><p class="compact-note">cards marked “Got it” in ${state.category==='all'?'all topics':'this topic'}</p><div class="flash-progress-bar" role="progressbar" aria-valuenow="${savedKnown}" aria-valuemin="0" aria-valuemax="${scope.length}" aria-label="Cards marked Got it"><span style="width:${savedKnown/scope.length*100}%"></span></div><div class="flash-count-row"><span>Got it</span><strong>${savedKnown}</strong></div><div class="flash-count-row"><span>Review again</span><strong>${savedAgain}</strong></div><div class="flash-count-row"><span>Not rated yet</span><strong>${scope.length-savedKnown-savedAgain}</strong></div><p class="compact-note">Read the question and try to recall the answer before flipping. Your ratings save on this browser.</p><button id="flash-reset" class="icon-btn">Reset flashcard progress</button><p class="compact-note">← → Navigate<br>Space / Enter · Flip<br>1 · Review again<br>2 · Got it</p></aside></div></section>`;
+  $('#flash-exit').onclick=exit;$('#flash-topic').onchange=e=>begin(e.target.value,state.reviewOnly,state.shuffle);$('#flash-review-filter').onchange=e=>begin(state.category,e.target.checked,state.shuffle);$('#flash-shuffle').onclick=()=>begin(state.category,state.reviewOnly,true);
+  if($('#flash-card')){$('#flash-card').onclick=flip;$('#flash-again').onclick=()=>rate('again');$('#flash-known').onclick=()=>rate('known');$('#flash-prev').onclick=()=>move(-1);$('#flash-next').onclick=()=>move(1)}
+  if($('#flash-all'))$('#flash-all').onclick=()=>begin(state.category,false,state.shuffle);if($('#flash-again-pile'))$('#flash-again-pile').onclick=()=>begin(state.category,true,state.shuffle);if($('#flash-return-last'))$('#flash-return-last').onclick=()=>move(-1);
+  $('#flash-reset').onclick=()=>{showModal('<h2>Reset flashcard progress?</h2><p>This clears all saved “Got it” and “Review again” ratings across the 50 flashcards. Your quiz scores and saved game stay separate.</p><button id="confirm-flash-reset" class="btn danger">Reset all flashcard ratings</button>');$('#confirm-flash-reset').onclick=()=>{closeModal();state.ratings={};begin(state.category,false,state.shuffle)}};
+  $('#live').textContent=state.complete?'Flashcard pass complete':revealed?'Answer: '+current.options[current.answer]:'Card '+(state.index+1)+'. '+current.question;
+ }
+ document.addEventListener('keydown',e=>{if(!active||$('#modal').open||/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key.toLowerCase();if((k===' '||k==='enter')&&e.target.tagName==='BUTTON'&&e.target.id!=='flash-card')return;if([' ','enter','arrowleft','arrowright','1','2'].includes(k))e.preventDefault();if(k===' '||k==='enter')flip();if(k==='arrowleft')move(-1);if(k==='arrowright')move(1);if(k==='1')rate('again');if(k==='2')rate('known');if(k==='m')$('#sound').click();if(k==='f')$('#fullscreen').click()});
+ window.FlashcardUI={open,isActive:()=>active,deactivate:()=>{active=false}};
+})();
+
+</script>
+</body></html>
